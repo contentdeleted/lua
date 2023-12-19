@@ -23,7 +23,7 @@ local UIListLayout = Instance.new("UIListLayout")
 local RabdomText = Instance.new("TextLabel")
 local Frame = Instance.new("Frame")
 local UICorner_6 = Instance.new("UICorner")
-local TextButton = Instance.new("TextButton")
+local close = Instance.new("TextButton")
 local UICorner_7 = Instance.new("UICorner")
 
 --Properties:
@@ -145,7 +145,7 @@ RabdomText.BackgroundTransparency = 1.000
 RabdomText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 RabdomText.BorderSizePixel = 0
 RabdomText.Position = UDim2.new(0, 0, -0.190734521, 0)
-RabdomText.Size = UDim2.new(1, 0, 0.158945397, 0)
+RabdomText.Size = UDim2.new(0.915948272, 0, 0.158945397, 0)
 RabdomText.ZIndex = 2
 RabdomText.Font = Enum.Font.SourceSans
 RabdomText.Text = "Ура тепло деда"
@@ -163,25 +163,26 @@ Frame.Size = UDim2.new(1, 0, 0.158945441, 0)
 
 UICorner_6.Parent = Frame
 
-TextButton.Parent = Frame
-TextButton.BackgroundColor3 = Color3.fromRGB(80, 80, 85)
-TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextButton.BorderSizePixel = 0
-TextButton.Position = UDim2.new(0.922413766, 0, 0, 0)
-TextButton.Size = UDim2.new(0.0775862038, 0, 1, 0)
-TextButton.ZIndex = 10
-TextButton.Font = Enum.Font.FredokaOne
-TextButton.Text = "X"
-TextButton.TextColor3 = Color3.fromRGB(255, 0, 0)
-TextButton.TextScaled = true
-TextButton.TextSize = 14.000
-TextButton.TextWrapped = true
+close.Name = "close"
+close.Parent = Frame
+close.BackgroundColor3 = Color3.fromRGB(80, 80, 85)
+close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+close.BorderSizePixel = 0
+close.Position = UDim2.new(0.922413766, 0, 0, 0)
+close.Size = UDim2.new(0.0775862038, 0, 1, 0)
+close.ZIndex = 10
+close.Font = Enum.Font.FredokaOne
+close.Text = "X"
+close.TextColor3 = Color3.fromRGB(255, 0, 0)
+close.TextScaled = true
+close.TextSize = 14.000
+close.TextWrapped = true
 
-UICorner_7.Parent = TextButton
+UICorner_7.Parent = close
 
 -- Scripts:
 
-local function FPHSTA_fake_script() -- ScreenGui.LocalScript 
+local function JGZF_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	local tween = game:GetService("TweenService")
@@ -310,5 +311,11 @@ local function FPHSTA_fake_script() -- ScreenGui.LocalScript
 		enabled = false
 	end)
 	spawn(farm)
+	
+	script.Parent.MainFrame.Frame.close.MouseButton1Click:Connect(function()
+		enabled = false
+		script.Parent.MainFrame:Destroy()
+		script:Destroy()
+	end)
 end
-coroutine.wrap(FPHSTA_fake_script)()
+coroutine.wrap(JGZF_fake_script)()
