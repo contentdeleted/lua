@@ -291,7 +291,7 @@ local function XLEXCXN_fake_script() -- ScreenGui.LocalScript
 				plr = game.Workspace:WaitForChild(game.Players.LocalPlayer.Name)
 				--plr:WaitForChild("HumanoidRootPart").Anchored = true
 				for _,i in pairs(folder:GetChildren()) do
-					plr:SetPrimaryPartCFrame(i.Position)
+					plr:SetPrimaryPartCFrame(i.CFrame)
 					wait(tp_cooldown)
 				end
 				--plr:WaitForChild("HumanoidRootPart").Anchored = false
