@@ -188,7 +188,7 @@ local function XLEXCXN_fake_script() -- ScreenGui.LocalScript
 	local tween = game:GetService("TweenService")
 	local enabled = false
 	local main_cooldown = 1
-	local tp_cooldown = 0.1
+	local tp_cooldown = 0.65
 	local main_frame = script.Parent.MainFrame
 	local debris_found = false
 	local debris = game:GetService("Debris")
@@ -292,7 +292,7 @@ local function XLEXCXN_fake_script() -- ScreenGui.LocalScript
 				--plr:WaitForChild("HumanoidRootPart").Anchored = true
 				for _,i in pairs(folder:GetChildren()) do
 					plr:SetPrimaryPartCFrame(i.CFrame)
-					wait(tp_cooldown)
+					wait(tp_cooldown+math.random(0.11111,0.99999))
 				end
 				--plr:WaitForChild("HumanoidRootPart").Anchored = false
 			end
