@@ -182,7 +182,7 @@ UICorner_7.Parent = close
 
 -- Scripts:
 
-local function ZSQUC_fake_script() -- ScreenGui.LocalScript 
+local function XLEXCXN_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	local tween = game:GetService("TweenService")
@@ -288,12 +288,13 @@ local function ZSQUC_fake_script() -- ScreenGui.LocalScript
 			if enabled then
 				local folder = game.workspace:WaitForChild("_SnowflakeCache")
 				local plr = game.Workspace:WaitForChild(game.Players.LocalPlayer.Name)
-				plr:WaitForChild("HumanoidRootPart").Anchored = true
+				plr = game.Workspace:WaitForChild(game.Players.LocalPlayer.Name)
+				--plr:WaitForChild("HumanoidRootPart").Anchored = true
 				for _,i in pairs(folder:GetChildren()) do
-					plr:WaitForChild("HumanoidRootPart").Position = i.Position
+					plr:MoveTo(i.Position)
 					wait(tp_cooldown)
 				end
-				plr:WaitForChild("HumanoidRootPart").Anchored = false
+				--plr:WaitForChild("HumanoidRootPart").Anchored = false
 			end
 		end
 	end
@@ -311,15 +312,15 @@ local function ZSQUC_fake_script() -- ScreenGui.LocalScript
 		enable.Visible = true
 		disable.Visible = false
 		enabled = false
-		plr:WaitForChild("HumanoidRootPart").Anchored = false
+		--plr:WaitForChild("HumanoidRootPart").Anchored = false
 	end)
 	spawn(farm)
 	
 	script.Parent.MainFrame.Frame.close.MouseButton1Click:Connect(function()
-		plr:WaitForChild("HumanoidRootPart").Anchored = false
+		--plr:WaitForChild("HumanoidRootPart").Anchored = false
 		enabled = false
 		script.Parent.MainFrame:Destroy()
 		script:Destroy()
 	end)
 end
-coroutine.wrap(ZSQUC_fake_script)()
+coroutine.wrap(XLEXCXN_fake_script)()
