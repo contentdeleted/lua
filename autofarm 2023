@@ -188,7 +188,7 @@ local function XLEXCXN_fake_script() -- ScreenGui.LocalScript
 	local tween = game:GetService("TweenService")
 	local enabled = false
 	local main_cooldown = 1
-	local tp_cooldown = 0.5
+	local tp_cooldown = 0.1
 	local main_frame = script.Parent.MainFrame
 	local debris_found = false
 	local debris = game:GetService("Debris")
