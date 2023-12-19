@@ -1,0 +1,314 @@
+-- (VOID) : Gui to Lua
+-- Version: 1.4
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local intro = Instance.new("ImageLabel")
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+local MainFrame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local functions = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local UIStroke = Instance.new("UIStroke")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local func = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local enable = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local disable = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local UIListLayout = Instance.new("UIListLayout")
+local RabdomText = Instance.new("TextLabel")
+local Frame = Instance.new("Frame")
+local UICorner_6 = Instance.new("UICorner")
+local TextButton = Instance.new("TextButton")
+local UICorner_7 = Instance.new("UICorner")
+
+--Properties:
+
+ScreenGui.Parent = (game:GetService("CoreGui") or gethui())
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+intro.Name = "intro"
+intro.Parent = ScreenGui
+intro.AnchorPoint = Vector2.new(0.5, 0.5)
+intro.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+intro.BackgroundTransparency = 1.000
+intro.BorderColor3 = Color3.fromRGB(0, 0, 0)
+intro.BorderSizePixel = 0
+intro.Position = UDim2.new(0.5, 0, 0.5, 0)
+intro.Size = UDim2.new(0.23963134, 0, 0.389027417, 0)
+intro.Image = "http://www.roblox.com/asset/?id=14939447488"
+intro.ImageTransparency = 1.000
+
+UIAspectRatioConstraint.Parent = intro
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = ScreenGui
+MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+MainFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 55)
+MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MainFrame.BorderSizePixel = 0
+MainFrame.Position = UDim2.new(0.5, 0, 0.490701616, 0)
+MainFrame.Size = UDim2.new(0.3563748, 0, 0.274565279, 0)
+MainFrame.Visible = false
+
+UICorner.Parent = MainFrame
+
+functions.Name = "functions"
+functions.Parent = MainFrame
+functions.BackgroundColor3 = Color3.fromRGB(10, 10, 15)
+functions.BorderColor3 = Color3.fromRGB(0, 0, 0)
+functions.BorderSizePixel = 0
+functions.Position = UDim2.new(0.0264462437, 0, 0.042275317, 0)
+functions.Size = UDim2.new(0.947107434, 0, 0.915525734, 0)
+
+UICorner_2.Parent = functions
+
+UIStroke.Parent = functions
+
+ScrollingFrame.Parent = functions
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollingFrame.BackgroundTransparency = 1.000
+ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScrollingFrame.BorderSizePixel = 0
+ScrollingFrame.Size = UDim2.new(1, 0, 1, 0)
+ScrollingFrame.ScrollBarThickness = 15
+
+func.Name = "func"
+func.Parent = ScrollingFrame
+func.BackgroundColor3 = Color3.fromRGB(72, 72, 77)
+func.BorderColor3 = Color3.fromRGB(0, 0, 0)
+func.BorderSizePixel = 0
+func.Position = UDim2.new(0.0227553099, 0, 0.029761903, 0)
+func.Size = UDim2.new(0.953447521, 0, 0.138888881, 0)
+
+UICorner_3.Parent = func
+
+TextLabel.Parent = func
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Size = UDim2.new(0.665871143, 0, 1, 0)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Фарм тепла деда"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+enable.Name = "enable"
+enable.Parent = func
+enable.BackgroundColor3 = Color3.fromRGB(97, 200, 0)
+enable.BorderColor3 = Color3.fromRGB(0, 0, 0)
+enable.BorderSizePixel = 0
+enable.Position = UDim2.new(0.727923632, 0, 0.125, 0)
+enable.Size = UDim2.new(0.245823383, 0, 0.732142866, 0)
+enable.Font = Enum.Font.SourceSans
+enable.Text = "Активировать"
+enable.TextColor3 = Color3.fromRGB(0, 0, 0)
+enable.TextScaled = true
+enable.TextSize = 14.000
+enable.TextWrapped = true
+
+UICorner_4.Parent = enable
+
+disable.Name = "disable"
+disable.Parent = func
+disable.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
+disable.BorderColor3 = Color3.fromRGB(0, 0, 0)
+disable.BorderSizePixel = 0
+disable.Position = UDim2.new(0.727923632, 0, 0.125, 0)
+disable.Size = UDim2.new(0.245823383, 0, 0.732142866, 0)
+disable.Visible = false
+disable.Font = Enum.Font.SourceSans
+disable.Text = "Деактивировать"
+disable.TextColor3 = Color3.fromRGB(0, 0, 0)
+disable.TextScaled = true
+disable.TextSize = 14.000
+disable.TextWrapped = true
+
+UICorner_5.Parent = disable
+
+UIListLayout.Parent = ScrollingFrame
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0.00999999978, 0)
+
+RabdomText.Name = "RabdomText"
+RabdomText.Parent = MainFrame
+RabdomText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+RabdomText.BackgroundTransparency = 1.000
+RabdomText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+RabdomText.BorderSizePixel = 0
+RabdomText.Position = UDim2.new(0, 0, -0.190734521, 0)
+RabdomText.Size = UDim2.new(1, 0, 0.158945397, 0)
+RabdomText.ZIndex = 2
+RabdomText.Font = Enum.Font.SourceSans
+RabdomText.Text = "Ура тепло деда"
+RabdomText.TextColor3 = Color3.fromRGB(255, 255, 255)
+RabdomText.TextScaled = true
+RabdomText.TextSize = 14.000
+RabdomText.TextWrapped = true
+
+Frame.Parent = MainFrame
+Frame.BackgroundColor3 = Color3.fromRGB(40, 40, 45)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0, 0, -0.190734521, 0)
+Frame.Size = UDim2.new(1, 0, 0.158945441, 0)
+
+UICorner_6.Parent = Frame
+
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(80, 80, 85)
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.922413766, 0, 0, 0)
+TextButton.Size = UDim2.new(0.0775862038, 0, 1, 0)
+TextButton.ZIndex = 10
+TextButton.Font = Enum.Font.FredokaOne
+TextButton.Text = "X"
+TextButton.TextColor3 = Color3.fromRGB(255, 0, 0)
+TextButton.TextScaled = true
+TextButton.TextSize = 14.000
+TextButton.TextWrapped = true
+
+UICorner_7.Parent = TextButton
+
+-- Scripts:
+
+local function FPHSTA_fake_script() -- ScreenGui.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui)
+
+	local tween = game:GetService("TweenService")
+	local enabled = false
+	local main_cooldown = 1
+	local tp_cooldown = 0.5
+	local main_frame = script.Parent.MainFrame
+	local debris_found = false
+	local debris = game:GetService("Debris")
+	local random_text = {
+		"Thanks for using this script!",
+		"The script was written by Heckers Company",
+		"The Heckers Company consists of one person 💀",
+		"We have some more interesting scripts ｡ꞈ｡",
+		"No one wants to join our discord server <(＿　＿)>",
+		"Is someone reading this text?...",
+		"Hello "..game.Players.LocalPlayer.Name.."!",
+		"I want a chocolate bar.. and coffee..",
+		"You like using exploits, don't you? <( 7  w  7 )>",
+		"Interesting fact.. you can turn off this text (kill me) in the settings :<",
+		"Hey! Help me! they locked me in this script! ＞︿＜",
+		"It's a pity that no one tell me if they like my scripts or not... ╯︿╰",
+		"infinite yield is a very cool script btw :)",
+		"Do you like hurting other people? <（￣︶￣）>",
+		"Я тебя блядь захуярю",
+		"Stalin_Love_Loli - AnimeSyndrom",
+		"Ahhhh!~ SENPAI~",
+		"Heeeeeeey! Can anyone hear me?",
+		"Hey bro, nice cock 🐔",
+		"Бляя... "..game.Players.LocalPlayer.Name.." ты бы знал какой костыль мне пришлось сделать что б это заработало"
+	}
+	
+	if debris then
+		debris_found = true
+	end
+	local default_tween = TweenInfo.new(2,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut,1,false,2)
+	local introimg = script.Parent:WaitForChild("intro")
+	wait(1)
+	tween:Create(introimg,default_tween,{ImageTransparency = 0}):Play()
+	wait(4)
+	tween:Create(introimg,default_tween,{ImageTransparency = 1}):Play()
+	wait(4)
+	introimg.Visible = false
+	function gui_drag()
+		local UIS = game:GetService('UserInputService')
+		local frame = main_frame
+		local dragToggle = nil
+		local dragSpeed = 0.25
+		local dragStart = nil
+		local startPos = nil
+		local function updateInput(input)
+			local delta = input.Position - dragStart
+			local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+				startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+			game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+		end
+		frame.InputBegan:Connect(function(input)
+			if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+				dragToggle = true
+				dragStart = input.Position
+				startPos = frame.Position
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragToggle = false
+					end
+				end)
+			end
+		end)
+		UIS.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+				if dragToggle then
+					updateInput(input)
+				end
+			end
+		end)
+	end
+	spawn(gui_drag)
+	main_frame.Visible = true
+	--tween:Create(main_frame,default_tween,{Size = UDim2.new(0.465,0,0.358,0)})
+	function typetext(obj,text)
+		for i = 1,#text,1 do
+			obj.Text = string.sub(text,1,i)
+			wait(0.05)
+		end
+	end
+	function randoms()
+		while wait(math.random(10,20)) do
+			local last
+			local r = random_text[math.random(1, #random_text)]
+			if not(r == last) then
+				typetext(main_frame.RabdomText,r)
+			end
+		end
+	end
+	if not game.Workspace:FindFirstChild("_SnowflakeCache") then
+		typetext(main_frame.RabdomText,"Хм.. похоже что разработчики поменяли имя папки с снежинками, пожалуйста напишите об этом разработчику скрипта (не удалось найти папку \"workspace._SnowflakeCache\")")
+	end
+	
+	spawn(randoms)
+	
+	function farm()
+		while wait(main_cooldown) do
+			if enabled then
+				local folder = game.workspace:WaitForChild("_SnowflakeCache")
+				local plr = game.Workspace:WaitForChild(game.Players.LocalPlayer.Name)
+				for _,i in pairs(folder:GetChildren()) do
+					plr:WaitForChild("HumanoidRootPart").Position = i.Position
+					wait(tp_cooldown)
+				end
+			end
+		end
+	end
+	
+	local buttons = script.Parent.MainFrame.functions.ScrollingFrame.func
+	local enable = buttons.enable
+	local disable = buttons.disable
+	
+	enable.MouseButton1Click:Connect(function()
+		enable.Visible = false
+		disable.Visible = true
+		enabled = true
+	end)
+	disable.MouseButton1Click:Connect(function()
+		enable.Visible = true
+		disable.Visible = false
+		enabled = false
+	end)
+	spawn(farm)
+end
+coroutine.wrap(FPHSTA_fake_script)()
