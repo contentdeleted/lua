@@ -264,6 +264,7 @@ slider.BorderColor3 = Color3.fromRGB(0, 0, 0)
 slider.BorderSizePixel = 0
 slider.Position = UDim2.new(0.0227553099, 0, 0.029761903, 0)
 slider.Size = UDim2.new(0.953447521, 0, 0.138888881, 0)
+slider.Visible = false
 
 UICorner_9.Parent = slider
 
@@ -414,18 +415,14 @@ close.TextWrapped = true
 
 UICorner_15.Parent = close
 
+-- Scripts:
 
-
-
-
-
-
-spawn(function()
-	wait(1)
+local function RCCOKKI_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
+
 	local tween = game:GetService("TweenService")
-	local slider = require(loadstring(game:HttpGet('https://raw.githubusercontent.com/contentdeleted/lua/main/autofarm%202023'))())
-	local timer = require(loadstring(game:HttpGet('https://raw.githubusercontent.com/contentdeleted/roblox-slider/main/slider%20v2'))())
+	--local slider = loadstring(game:HttpGet('https://raw.githubusercontent.com/contentdeleted/lua/main/autofarm%202023'))()
+	--local timer = loadstring(game:HttpGet('https://raw.githubusercontent.com/contentdeleted/roblox-slider/main/slider%20v2'))()
 	--local slider = require(script.Parent.SliderModule)
 	--local timer = require(script.Parent.timer)
 	local enabled = false
@@ -458,7 +455,7 @@ spawn(function()
 		"Hey bro, nice cock 🐔",
 		"Бляя... "..game.Players.LocalPlayer.Name.." ты бы знал какой костыль мне пришлось сделать что б это заработало"
 	}
-
+	
 	if debris then
 		debris_found = true
 	end
@@ -469,7 +466,7 @@ spawn(function()
 	wait(4)
 	tween:Create(introimg,default_tween,{ImageTransparency = 1}):Play()
 	wait(4)
-	local slider_frame = script.Parent.MainFrame.functions.ScrollingFrame.slider.Frame
+	--[[local slider_frame = script.Parent.MainFrame.functions.ScrollingFrame.slider.Frame
 	local newSlider = slider.new(slider_frame.SlidingPart, slider_frame.SlidingPart.Slider, slider_frame.SlidingPart.Slider.Button, 
 		{
 			min = -1.5,
@@ -482,7 +479,7 @@ spawn(function()
 	newSlider:Activate()
 	newSlider.ValueChanged.Event:Connect(function(currentValue: number)
 		tp_cooldown_correction = currentValue
-	end)
+	end)]]
 	introimg.Visible = false
 	function gui_drag()
 		local UIS = game:GetService('UserInputService')
@@ -537,9 +534,9 @@ spawn(function()
 	if not game.Workspace:FindFirstChild("_SnowflakeCache") then
 		typetext(main_frame.RabdomText,"Хм.. похоже что разработчики поменяли имя папки с снежинками, пожалуйста напишите об этом разработчику скрипта (не удалось найти папку \"workspace._SnowflakeCache\")")
 	end
-
+	
 	spawn(randoms)
-
+	
 	function farm()
 		while wait(main_cooldown) do
 			if enabled then
@@ -548,7 +545,7 @@ spawn(function()
 				plr = game.Workspace:WaitForChild(game.Players.LocalPlayer.Name)
 				for _,i in pairs(folder:GetChildren()) do
 					plr:SetPrimaryPartCFrame(i.CFrame)
-					wait(tp_cooldown + timer.new(-0.5,0.5,4,0.12345) + tp_cooldown_correction)
+					wait(tp_cooldown)-- + timer.new(-0.5,0.5,4,0.12345) + tp_cooldown_correction)
 					if testmode then
 						keypress(0x45)
 						wait(0.01)
@@ -558,11 +555,11 @@ spawn(function()
 			end
 		end
 	end
-
+	
 	local act_buttons = script.Parent.MainFrame.functions.ScrollingFrame.func
 	local enable = act_buttons.enable
 	local disable = act_buttons.disable
-
+	
 	enable.MouseButton1Click:Connect(function()
 		enable.Visible = false
 		disable.Visible = true
@@ -573,11 +570,11 @@ spawn(function()
 		disable.Visible = false
 		enabled = false
 	end)
-
+	
 	local test_mode_buttons = script.Parent.MainFrame.functions.ScrollingFrame.keymode
 	local t_enable = test_mode_buttons.enable
 	local t_disable = test_mode_buttons.disable
-
+	
 	t_enable.MouseButton1Click:Connect(function()
 		t_enable.Visible = false
 		t_disable.Visible = true
@@ -588,12 +585,13 @@ spawn(function()
 		t_disable.Visible = false
 		testmode = false
 	end)
-
+	
 	spawn(farm)
-
+	
 	script.Parent.MainFrame.Frame.close.MouseButton1Click:Connect(function()
 		enabled = false
 		script.Parent.MainFrame:Destroy()
 		script:Destroy()
 	end)
-end)
+end
+coroutine.wrap(RCCOKKI_fake_script)()
