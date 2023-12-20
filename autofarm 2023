@@ -32,29 +32,11 @@ local UICorner_8 = Instance.new("UICorner")
 local TextLabel_3 = Instance.new("TextLabel")
 local light_2 = Instance.new("UIStroke")
 local UIGradient_2 = Instance.new("UIGradient")
-local slider = Instance.new("Frame")
-local UICorner_9 = Instance.new("UICorner")
-local TextLabel_4 = Instance.new("TextLabel")
-local light_3 = Instance.new("UIStroke")
-local UIGradient_3 = Instance.new("UIGradient")
-local Frame = Instance.new("Frame")
-local SlidingPart = Instance.new("Frame")
-local Background = Instance.new("Frame")
-local UICorner_10 = Instance.new("UICorner")
-local UIStroke_2 = Instance.new("UIStroke")
-local UIGradient_4 = Instance.new("UIGradient")
-local ValueFrame = Instance.new("Frame")
-local UICorner_11 = Instance.new("UICorner")
-local TextLabel_5 = Instance.new("TextLabel")
-local Slider = Instance.new("Frame")
-local Button = Instance.new("TextButton")
-local UICorner_12 = Instance.new("UICorner")
-local UICorner_13 = Instance.new("UICorner")
 local RabdomText = Instance.new("TextLabel")
-local Frame_2 = Instance.new("Frame")
-local UICorner_14 = Instance.new("UICorner")
+local Frame = Instance.new("Frame")
+local UICorner_9 = Instance.new("UICorner")
 local close = Instance.new("TextButton")
-local UICorner_15 = Instance.new("UICorner")
+local UICorner_10 = Instance.new("UICorner")
 
 --Properties:
 
@@ -257,122 +239,6 @@ light_2.Name = "light"
 UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
 UIGradient_2.Parent = light_2
 
-slider.Name = "slider"
-slider.Parent = ScrollingFrame
-slider.BackgroundColor3 = Color3.fromRGB(72, 72, 77)
-slider.BorderColor3 = Color3.fromRGB(0, 0, 0)
-slider.BorderSizePixel = 0
-slider.Position = UDim2.new(0.0227553099, 0, 0.029761903, 0)
-slider.Size = UDim2.new(0.953447521, 0, 0.138888881, 0)
-slider.Visible = false
-
-UICorner_9.Parent = slider
-
-TextLabel_4.Parent = slider
-TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_4.BackgroundTransparency = 1.000
-TextLabel_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_4.BorderSizePixel = 0
-TextLabel_4.Size = UDim2.new(1, 0, 0.339285702, 0)
-TextLabel_4.Font = Enum.Font.SourceSans
-TextLabel_4.Text = "Коррекция времени телепортации"
-TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_4.TextScaled = true
-TextLabel_4.TextSize = 14.000
-TextLabel_4.TextWrapped = true
-
-light_3.Color = Color3.fromRGB(255, 255, 255)
-light_3.Thickness = 2.000
-light_3.Parent = slider
-light_3.Name = "light"
-
-UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
-UIGradient_3.Parent = light_3
-
-Frame.Parent = slider
-Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame.BackgroundTransparency = 1.000
-Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Frame.BorderSizePixel = 0
-Frame.Position = UDim2.new(7.41847899e-08, 0, 0.321000248, 0)
-Frame.Size = UDim2.new(0.893040836, 0, 0.67900002, 0)
-
-SlidingPart.Name = "SlidingPart"
-SlidingPart.Parent = Frame
-SlidingPart.AnchorPoint = Vector2.new(0.5, 0.5)
-SlidingPart.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-SlidingPart.BackgroundTransparency = 1.000
-SlidingPart.BorderColor3 = Color3.fromRGB(0, 0, 0)
-SlidingPart.BorderSizePixel = 0
-SlidingPart.Position = UDim2.new(0.490999997, 0, 0.513000011, 0)
-SlidingPart.Size = UDim2.new(0.861000001, 0, 0.289999992, 0)
-
-Background.Name = "Background"
-Background.Parent = SlidingPart
-Background.AnchorPoint = Vector2.new(0.5, 0.5)
-Background.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Background.Position = UDim2.new(0.5, 0, 0.5, 0)
-Background.Size = UDim2.new(1, 0, 1, 0)
-
-UICorner_10.Parent = Background
-
-UIStroke_2.Thickness = 2.000
-UIStroke_2.Parent = Background
-
-UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(40, 40, 45)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
-UIGradient_4.Parent = Background
-
-ValueFrame.Name = "ValueFrame"
-ValueFrame.Parent = SlidingPart
-ValueFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-ValueFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ValueFrame.BorderSizePixel = 0
-ValueFrame.Position = UDim2.new(1.04012609, 0, -1.17610586, 0)
-ValueFrame.Size = UDim2.new(0, 53, 0, 29)
-
-UICorner_11.Parent = ValueFrame
-
-TextLabel_5.Parent = ValueFrame
-TextLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_5.BackgroundTransparency = 1.000
-TextLabel_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_5.BorderSizePixel = 0
-TextLabel_5.Size = UDim2.new(1, 0, 1, 0)
-TextLabel_5.Font = Enum.Font.SourceSans
-TextLabel_5.Text = "0"
-TextLabel_5.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_5.TextScaled = true
-TextLabel_5.TextSize = 14.000
-TextLabel_5.TextWrapped = true
-
-Slider.Name = "Slider"
-Slider.Parent = SlidingPart
-Slider.AnchorPoint = Vector2.new(0.5, 0.5)
-Slider.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Slider.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Slider.BorderSizePixel = 0
-Slider.Position = UDim2.new(0.5, 0, 0.5, 0)
-Slider.Size = UDim2.new(0.0680000037, 0, 1.92999995, 0)
-
-Button.Name = "Button"
-Button.Parent = Slider
-Button.AnchorPoint = Vector2.new(0.5, 0.5)
-Button.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
-Button.BorderColor3 = Color3.fromRGB(20, 32, 40)
-Button.Position = UDim2.new(0.5, 0, 0.499999553, 0)
-Button.Size = UDim2.new(0.899999976, 0, 0.899999976, 0)
-Button.ZIndex = 200
-Button.Font = Enum.Font.GothamBlack
-Button.Text = ""
-Button.TextColor3 = Color3.fromRGB(255, 255, 255)
-Button.TextScaled = true
-Button.TextSize = 14.000
-Button.TextWrapped = true
-
-UICorner_12.Parent = Button
-
-UICorner_13.Parent = Slider
-
 RabdomText.Name = "RabdomText"
 RabdomText.Parent = MainFrame
 RabdomText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -389,17 +255,17 @@ RabdomText.TextScaled = true
 RabdomText.TextSize = 14.000
 RabdomText.TextWrapped = true
 
-Frame_2.Parent = MainFrame
-Frame_2.BackgroundColor3 = Color3.fromRGB(40, 40, 45)
-Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Frame_2.BorderSizePixel = 0
-Frame_2.Position = UDim2.new(0, 0, -0.190734521, 0)
-Frame_2.Size = UDim2.new(1, 0, 0.158945441, 0)
+Frame.Parent = MainFrame
+Frame.BackgroundColor3 = Color3.fromRGB(40, 40, 45)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0, 0, -0.190734521, 0)
+Frame.Size = UDim2.new(1, 0, 0.158945441, 0)
 
-UICorner_14.Parent = Frame_2
+UICorner_9.Parent = Frame
 
 close.Name = "close"
-close.Parent = Frame_2
+close.Parent = Frame
 close.BackgroundColor3 = Color3.fromRGB(80, 80, 85)
 close.BorderColor3 = Color3.fromRGB(0, 0, 0)
 close.BorderSizePixel = 0
@@ -413,18 +279,14 @@ close.TextScaled = true
 close.TextSize = 14.000
 close.TextWrapped = true
 
-UICorner_15.Parent = close
+UICorner_10.Parent = close
 
 -- Scripts:
 
-local function RCCOKKI_fake_script() -- ScreenGui.LocalScript 
+local function QXRCFTI_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	local tween = game:GetService("TweenService")
-	--local slider = loadstring(game:HttpGet('https://raw.githubusercontent.com/contentdeleted/lua/main/autofarm%202023'))()
-	--local timer = loadstring(game:HttpGet('https://raw.githubusercontent.com/contentdeleted/roblox-slider/main/slider%20v2'))()
-	--local slider = require(script.Parent.SliderModule)
-	--local timer = require(script.Parent.timer)
 	local enabled = false
 	local testmode = false
 	local main_cooldown = 2
@@ -466,20 +328,6 @@ local function RCCOKKI_fake_script() -- ScreenGui.LocalScript
 	wait(4)
 	tween:Create(introimg,default_tween,{ImageTransparency = 1}):Play()
 	wait(4)
-	--[[local slider_frame = script.Parent.MainFrame.functions.ScrollingFrame.slider.Frame
-	local newSlider = slider.new(slider_frame.SlidingPart, slider_frame.SlidingPart.Slider, slider_frame.SlidingPart.Slider.Button, 
-		{
-			min = -1.5,
-			max = 1.5,
-			snapFactor = 0.05
-		}, 
-		{
-			TextBox = slider_frame.SlidingPart.ValueFrame.TextLabel
-		})
-	newSlider:Activate()
-	newSlider.ValueChanged.Event:Connect(function(currentValue: number)
-		tp_cooldown_correction = currentValue
-	end)]]
 	introimg.Visible = false
 	function gui_drag()
 		local UIS = game:GetService('UserInputService')
@@ -594,4 +442,4 @@ local function RCCOKKI_fake_script() -- ScreenGui.LocalScript
 		script:Destroy()
 	end)
 end
-coroutine.wrap(RCCOKKI_fake_script)()
+coroutine.wrap(QXRCFTI_fake_script)()
