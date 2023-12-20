@@ -1,4 +1,8 @@
+-- (VOID) : Gui to Lua
+-- Version: 1.4
+
 -- Instances:
+
 local ScreenGui = Instance.new("ScreenGui")
 local intro = Instance.new("ImageLabel")
 local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
@@ -412,18 +416,18 @@ UICorner_15.Parent = close
 
 -- Scripts:
 
-local function VDJIYI_fake_script() -- ScreenGui.LocalScript 
+local function NKVZB_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	local tween = game:GetService("TweenService")
-	local timer = loadstring(game:HttpGet('https://raw.githubusercontent.com/contentdeleted/lua/main/MyRandom'))()
-	local slider = loadstring(game:HttpGet('https://raw.githubusercontent.com/contentdeleted/roblox-slider/main/slider%20v2'))()
+	local slider = loadstring(game:HttpGet('https://raw.githubusercontent.com/contentdeleted/lua/main/autofarm%202023'))()
+	local timer = loadstring(game:HttpGet('https://raw.githubusercontent.com/contentdeleted/roblox-slider/main/slider%20v2'))()
 	local enabled = false
 	local testmode = false
 	local main_cooldown = 2
 	local tp_cooldown = 0.75
 	local tp_cooldown_correction = 0
-	local main_frame = MainFrame
+	local main_frame = script.Parent.MainFrame
 	local debris_found = false
 	local debris = game:GetService("Debris")
 	local random_text = {
@@ -587,4 +591,4 @@ local function VDJIYI_fake_script() -- ScreenGui.LocalScript
 		script:Destroy()
 	end)
 end
-coroutine.wrap(VDJIYI_fake_script)()
+coroutine.wrap(NKVZB_fake_script)()
