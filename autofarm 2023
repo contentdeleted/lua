@@ -739,6 +739,7 @@ local function XINEN_fake_script() -- ScreenGui.LocalScript
 	wait(4)
 	tween:Create(introimg,default_tween,{ImageTransparency = 1}):Play()
 	wait(4)
+	spawn(function()
 	local slider_frame = script.Parent.MainFrame.functions.ScrollingFrame.slider.Frame
 	local newSlider = slider.new(slider_frame.SlidingPart, slider_frame.SlidingPart.Slider, slider_frame.SlidingPart.Slider.Button, 
 		{
@@ -752,6 +753,7 @@ local function XINEN_fake_script() -- ScreenGui.LocalScript
 	newSlider:Activate()
 	newSlider.ValueChanged.Event:Connect(function(currentValue: number)
 		tp_cooldown_correction = currentValue
+	end)
 	end)
 	introimg.Visible = false
 	function gui_drag()
