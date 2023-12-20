@@ -414,6 +414,190 @@ close.TextWrapped = true
 
 UICorner_15.Parent = close
 
+
+
+
+
+
+
+spawn(function()
+	wait(1)
+	local script = Instance.new('LocalScript', ScreenGui)
+	local tween = game:GetService("TweenService")
+	--local slider = loadstring(game:HttpGet('https://raw.githubusercontent.com/contentdeleted/lua/main/autofarm%202023'))()
+	--local timer = loadstring(game:HttpGet('https://raw.githubusercontent.com/contentdeleted/roblox-slider/main/slider%20v2'))()
+	local slider = require(script.Parent.SliderModule)
+	local timer = require(script.Parent.timer)
+	local enabled = false
+	local testmode = false
+	local main_cooldown = 2
+	local tp_cooldown = 0.75
+	local tp_cooldown_correction = 0
+	local main_frame = script.Parent.MainFrame
+	local debris_found = false
+	local debris = game:GetService("Debris")
+	local random_text = {
+		"Thanks for using this script!",
+		"The script was written by Heckers Company",
+		"The Heckers Company consists of one person 💀",
+		"We have some more interesting scripts ｡ꞈ｡",
+		"No one wants to join our discord server <(＿　＿)>",
+		"Is someone reading this text?...",
+		"Hello "..game.Players.LocalPlayer.Name.."!",
+		"I want a chocolate bar.. and coffee..",
+		"You like using exploits, don't you? <( 7  w  7 )>",
+		"Interesting fact.. you can turn off this text (kill me) in the settings :<",
+		"Hey! Help me! they locked me in this script! ＞︿＜",
+		"It's a pity that no one tell me if they like my scripts or not... ╯︿╰",
+		"infinite yield is a very cool script btw :)",
+		"Do you like hurting other people? <（￣︶￣）>",
+		"Я тебя блядь захуярю",
+		"Stalin_Love_Loli - AnimeSyndrom",
+		"Ahhhh!~ SENPAI~",
+		"Heeeeeeey! Can anyone hear me?",
+		"Hey bro, nice cock 🐔",
+		"Бляя... "..game.Players.LocalPlayer.Name.." ты бы знал какой костыль мне пришлось сделать что б это заработало"
+	}
+
+	if debris then
+		debris_found = true
+	end
+	local default_tween = TweenInfo.new(2,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut,1,false,2)
+	local introimg = script.Parent:WaitForChild("intro")
+	wait(1)
+	tween:Create(introimg,default_tween,{ImageTransparency = 0}):Play()
+	wait(4)
+	tween:Create(introimg,default_tween,{ImageTransparency = 1}):Play()
+	wait(4)
+	local slider_frame = script.Parent.MainFrame.functions.ScrollingFrame.slider.Frame
+	local newSlider = slider.new(slider_frame.SlidingPart, slider_frame.SlidingPart.Slider, slider_frame.SlidingPart.Slider.Button, 
+		{
+			min = -1.5,
+			max = 1.5,
+			snapFactor = 0.05
+		}, 
+		{
+			TextBox = slider_frame.SlidingPart.ValueFrame.TextLabel
+		})
+	newSlider:Activate()
+	newSlider.ValueChanged.Event:Connect(function(currentValue: number)
+		tp_cooldown_correction = currentValue
+	end)
+	introimg.Visible = false
+	function gui_drag()
+		local UIS = game:GetService('UserInputService')
+		local frame = main_frame
+		local dragToggle = nil
+		local dragSpeed = 0.25
+		local dragStart = nil
+		local startPos = nil
+		local function updateInput(input)
+			local delta = input.Position - dragStart
+			local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+				startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+			game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+		end
+		frame.InputBegan:Connect(function(input)
+			if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+				dragToggle = true
+				dragStart = input.Position
+				startPos = frame.Position
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragToggle = false
+					end
+				end)
+			end
+		end)
+		UIS.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+				if dragToggle then
+					updateInput(input)
+				end
+			end
+		end)
+	end
+	spawn(gui_drag)
+	main_frame.Visible = true
+	function typetext(obj,text)
+		for i = 1,#text,1 do
+			obj.Text = string.sub(text,1,i)
+			wait(0.05)
+		end
+	end
+	function randoms()
+		while wait(math.random(10,20)) do
+			local last
+			local r = random_text[math.random(1, #random_text)]
+			if not(r == last) then
+				typetext(main_frame.RabdomText,r)
+			end
+		end
+	end
+	if not game.Workspace:FindFirstChild("_SnowflakeCache") then
+		typetext(main_frame.RabdomText,"Хм.. похоже что разработчики поменяли имя папки с снежинками, пожалуйста напишите об этом разработчику скрипта (не удалось найти папку \"workspace._SnowflakeCache\")")
+	end
+
+	spawn(randoms)
+
+	function farm()
+		while wait(main_cooldown) do
+			if enabled then
+				local folder = game.workspace:WaitForChild("_SnowflakeCache")
+				local plr = game.Workspace:WaitForChild(game.Players.LocalPlayer.Name)
+				plr = game.Workspace:WaitForChild(game.Players.LocalPlayer.Name)
+				for _,i in pairs(folder:GetChildren()) do
+					plr:SetPrimaryPartCFrame(i.CFrame)
+					wait(tp_cooldown + timer.new(-0.5,0.5,4,0.12345) + tp_cooldown_correction)
+					if testmode then
+						keypress(0x45)
+						wait(0.01)
+						keyrelease(0x45)
+					end
+				end
+			end
+		end
+	end
+
+	local act_buttons = script.Parent.MainFrame.functions.ScrollingFrame.func
+	local enable = act_buttons.enable
+	local disable = act_buttons.disable
+
+	enable.MouseButton1Click:Connect(function()
+		enable.Visible = false
+		disable.Visible = true
+		enabled = true
+	end)
+	disable.MouseButton1Click:Connect(function()
+		enable.Visible = true
+		disable.Visible = false
+		enabled = false
+	end)
+
+	local test_mode_buttons = script.Parent.MainFrame.functions.ScrollingFrame.keymode
+	local t_enable = test_mode_buttons.enable
+	local t_disable = test_mode_buttons.disable
+
+	t_enable.MouseButton1Click:Connect(function()
+		t_enable.Visible = false
+		t_disable.Visible = true
+		testmode = true
+	end)
+	t_disable.MouseButton1Click:Connect(function()
+		t_enable.Visible = true
+		t_disable.Visible = false
+		testmode = false
+	end)
+
+	spawn(farm)
+
+	script.Parent.MainFrame.Frame.close.MouseButton1Click:Connect(function()
+		enabled = false
+		script.Parent.MainFrame:Destroy()
+		script:Destroy()
+	end)
+end)
+
 -- Module Scripts:
 
 local fake_module_scripts = {}
@@ -678,195 +862,3 @@ do -- ScreenGui.SliderModule
 	end
 	fake_module_scripts[script] = module_script
 end
-
-
--- Scripts:
-
-local function XINEN_fake_script() -- ScreenGui.LocalScript 
-	local script = Instance.new('LocalScript', ScreenGui)
-	local req = require
-	local require = function(obj)
-		local fake = fake_module_scripts[obj]
-		if fake then
-			return fake()
-		end
-		return req(obj)
-	end
-
-	local tween = game:GetService("TweenService")
-	--local slider = loadstring(game:HttpGet('https://raw.githubusercontent.com/contentdeleted/lua/main/autofarm%202023'))()
-	--local timer = loadstring(game:HttpGet('https://raw.githubusercontent.com/contentdeleted/roblox-slider/main/slider%20v2'))()
-	local slider = require(script.Parent.SliderModule)
-	local timer = require(script.Parent.timer)
-	local enabled = false
-	local testmode = false
-	local main_cooldown = 2
-	local tp_cooldown = 0.75
-	local tp_cooldown_correction = 0
-	local main_frame = script.Parent.MainFrame
-	local debris_found = false
-	local debris = game:GetService("Debris")
-	local random_text = {
-		"Thanks for using this script!",
-		"The script was written by Heckers Company",
-		"The Heckers Company consists of one person 💀",
-		"We have some more interesting scripts ｡ꞈ｡",
-		"No one wants to join our discord server <(＿　＿)>",
-		"Is someone reading this text?...",
-		"Hello "..game.Players.LocalPlayer.Name.."!",
-		"I want a chocolate bar.. and coffee..",
-		"You like using exploits, don't you? <( 7  w  7 )>",
-		"Interesting fact.. you can turn off this text (kill me) in the settings :<",
-		"Hey! Help me! they locked me in this script! ＞︿＜",
-		"It's a pity that no one tell me if they like my scripts or not... ╯︿╰",
-		"infinite yield is a very cool script btw :)",
-		"Do you like hurting other people? <（￣︶￣）>",
-		"Я тебя блядь захуярю",
-		"Stalin_Love_Loli - AnimeSyndrom",
-		"Ahhhh!~ SENPAI~",
-		"Heeeeeeey! Can anyone hear me?",
-		"Hey bro, nice cock 🐔",
-		"Бляя... "..game.Players.LocalPlayer.Name.." ты бы знал какой костыль мне пришлось сделать что б это заработало"
-	}
-	
-	if debris then
-		debris_found = true
-	end
-	local default_tween = TweenInfo.new(2,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut,1,false,2)
-	local introimg = script.Parent:WaitForChild("intro")
-	wait(1)
-	tween:Create(introimg,default_tween,{ImageTransparency = 0}):Play()
-	wait(4)
-	tween:Create(introimg,default_tween,{ImageTransparency = 1}):Play()
-	wait(4)
-	spawn(function()
-	local slider_frame = script.Parent.MainFrame.functions.ScrollingFrame.slider.Frame
-	local newSlider = slider.new(slider_frame.SlidingPart, slider_frame.SlidingPart.Slider, slider_frame.SlidingPart.Slider.Button, 
-		{
-			min = -1.5,
-			max = 1.5,
-			snapFactor = 0.05
-		}, 
-		{
-			TextBox = slider_frame.SlidingPart.ValueFrame.TextLabel
-		})
-	newSlider:Activate()
-	newSlider.ValueChanged.Event:Connect(function(currentValue: number)
-		tp_cooldown_correction = currentValue
-	end)
-	end)
-	introimg.Visible = false
-	function gui_drag()
-		local UIS = game:GetService('UserInputService')
-		local frame = main_frame
-		local dragToggle = nil
-		local dragSpeed = 0.25
-		local dragStart = nil
-		local startPos = nil
-		local function updateInput(input)
-			local delta = input.Position - dragStart
-			local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
-				startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-			game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
-		end
-		frame.InputBegan:Connect(function(input)
-			if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
-				dragToggle = true
-				dragStart = input.Position
-				startPos = frame.Position
-				input.Changed:Connect(function()
-					if input.UserInputState == Enum.UserInputState.End then
-						dragToggle = false
-					end
-				end)
-			end
-		end)
-		UIS.InputChanged:Connect(function(input)
-			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-				if dragToggle then
-					updateInput(input)
-				end
-			end
-		end)
-	end
-	spawn(gui_drag)
-	main_frame.Visible = true
-	function typetext(obj,text)
-		for i = 1,#text,1 do
-			obj.Text = string.sub(text,1,i)
-			wait(0.05)
-		end
-	end
-	function randoms()
-		while wait(math.random(10,20)) do
-			local last
-			local r = random_text[math.random(1, #random_text)]
-			if not(r == last) then
-				typetext(main_frame.RabdomText,r)
-			end
-		end
-	end
-	if not game.Workspace:FindFirstChild("_SnowflakeCache") then
-		typetext(main_frame.RabdomText,"Хм.. похоже что разработчики поменяли имя папки с снежинками, пожалуйста напишите об этом разработчику скрипта (не удалось найти папку \"workspace._SnowflakeCache\")")
-	end
-	
-	spawn(randoms)
-	
-	function farm()
-		while wait(main_cooldown) do
-			if enabled then
-				local folder = game.workspace:WaitForChild("_SnowflakeCache")
-				local plr = game.Workspace:WaitForChild(game.Players.LocalPlayer.Name)
-				plr = game.Workspace:WaitForChild(game.Players.LocalPlayer.Name)
-				for _,i in pairs(folder:GetChildren()) do
-					plr:SetPrimaryPartCFrame(i.CFrame)
-					wait(tp_cooldown + timer.new(-0.5,0.5,4,0.12345) + tp_cooldown_correction)
-					if testmode then
-						keypress(0x45)
-						wait(0.01)
-						keyrelease(0x45)
-					end
-				end
-			end
-		end
-	end
-	
-	local act_buttons = script.Parent.MainFrame.functions.ScrollingFrame.func
-	local enable = act_buttons.enable
-	local disable = act_buttons.disable
-	
-	enable.MouseButton1Click:Connect(function()
-		enable.Visible = false
-		disable.Visible = true
-		enabled = true
-	end)
-	disable.MouseButton1Click:Connect(function()
-		enable.Visible = true
-		disable.Visible = false
-		enabled = false
-	end)
-	
-	local test_mode_buttons = script.Parent.MainFrame.functions.ScrollingFrame.keymode
-	local t_enable = test_mode_buttons.enable
-	local t_disable = test_mode_buttons.disable
-	
-	t_enable.MouseButton1Click:Connect(function()
-		t_enable.Visible = false
-		t_disable.Visible = true
-		testmode = true
-	end)
-	t_disable.MouseButton1Click:Connect(function()
-		t_enable.Visible = true
-		t_disable.Visible = false
-		testmode = false
-	end)
-	
-	spawn(farm)
-	
-	script.Parent.MainFrame.Frame.close.MouseButton1Click:Connect(function()
-		enabled = false
-		script.Parent.MainFrame:Destroy()
-		script:Destroy()
-	end)
-end
-coroutine.wrap(XINEN_fake_script)()
