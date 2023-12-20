@@ -423,7 +423,7 @@ local function VDJIYI_fake_script() -- ScreenGui.LocalScript
 	local main_cooldown = 2
 	local tp_cooldown = 0.75
 	local tp_cooldown_correction = 0
-	local main_frame = script.Parent.MainFrame
+	local main_frame = MainFrame
 	local debris_found = false
 	local debris = game:GetService("Debris")
 	local random_text = {
