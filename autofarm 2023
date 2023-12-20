@@ -1,8 +1,4 @@
--- (VOID) : Gui to Lua
--- Version: 1.4
-
 -- Instances:
-
 local ScreenGui = Instance.new("ScreenGui")
 local intro = Instance.new("ImageLabel")
 local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
@@ -420,10 +416,8 @@ local function VDJIYI_fake_script() -- ScreenGui.LocalScript
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	local tween = game:GetService("TweenService")
-	local timer = require(loadstring(game:HttpGet('https://raw.githubusercontent.com/contentdeleted/lua/main/MyRandom'))())
-	local slider = require(loadstring(game:HttpGet('https://raw.githubusercontent.com/contentdeleted/roblox-slider/main/slider%20v2'))())
-	--local slider = require(script.SliderModule)
-	--local timer = require(script.ModuleScript)
+	local timer = loadstring(game:HttpGet('https://raw.githubusercontent.com/contentdeleted/lua/main/MyRandom'))()
+	local slider = loadstring(game:HttpGet('https://raw.githubusercontent.com/contentdeleted/roblox-slider/main/slider%20v2'))()
 	local enabled = false
 	local testmode = false
 	local main_cooldown = 2
