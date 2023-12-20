@@ -544,7 +544,7 @@ local function VDJIYI_fake_script() -- ScreenGui.LocalScript
 				plr = game.Workspace:WaitForChild(game.Players.LocalPlayer.Name)
 				for _,i in pairs(folder:GetChildren()) do
 					plr:SetPrimaryPartCFrame(i.CFrame)
-					wait(tp_cooldown + timer.new(-0.5,0.5,4,0.12345))
+					wait(tp_cooldown + timer.new(-0.5,0.5,4,0.12345) + tp_cooldown_correction)
 					if testmode then
 						keypress(0x45)
 						wait(0.01)
