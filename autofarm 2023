@@ -413,7 +413,7 @@ UICorner_15.Parent = close
 -- Scripts:
 
 local function VDJIYI_fake_script() -- ScreenGui.LocalScript 
-	--local script = Instance.new('LocalScript', ScreenGui)
+	local script = Instance.new('LocalScript', ScreenGui)
 
 	local tween = game:GetService("TweenService")
 	local timer = loadstring(game:HttpGet('https://raw.githubusercontent.com/contentdeleted/lua/main/MyRandom'))()
