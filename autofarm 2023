@@ -420,8 +420,8 @@ local function NKVZB_fake_script() -- ScreenGui.LocalScript
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	local tween = game:GetService("TweenService")
-	local slider = loadstring(game:HttpGet('https://raw.githubusercontent.com/contentdeleted/lua/main/autofarm%202023'))()
-	local timer = loadstring(game:HttpGet('https://raw.githubusercontent.com/contentdeleted/roblox-slider/main/slider%20v2'))()
+	local slider = require(loadstring(game:HttpGet('https://raw.githubusercontent.com/contentdeleted/lua/main/autofarm%202023'))())
+	local timer = require(loadstring(game:HttpGet('https://raw.githubusercontent.com/contentdeleted/roblox-slider/main/slider%20v2'))())
 	local enabled = false
 	local testmode = false
 	local main_cooldown = 2
