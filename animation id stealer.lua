@@ -1,5 +1,5 @@
--- Gui to Lua
--- Version: 3.2
+-- (VOID) : Gui to Lua
+-- Version: 1.4
 
 -- Instances:
 
@@ -8,9 +8,11 @@ local HClogo = Instance.new("ImageLabel")
 local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 local main = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
+local UIStroke = Instance.new("UIStroke")
 local TextLabel = Instance.new("TextLabel")
 local list = Instance.new("Frame")
 local UICorner_2 = Instance.new("UICorner")
+local UIStroke_2 = Instance.new("UIStroke")
 local ScrollingFrame = Instance.new("ScrollingFrame")
 local UIListLayout = Instance.new("UIListLayout")
 local UIGradient = Instance.new("UIGradient")
@@ -22,8 +24,10 @@ local close = Instance.new("TextButton")
 local UICorner_4 = Instance.new("UICorner")
 local hit = Instance.new("Frame")
 local UICorner_5 = Instance.new("UICorner")
+local UIStroke_3 = Instance.new("UIStroke")
 local a = Instance.new("Frame")
 local UICorner_6 = Instance.new("UICorner")
+local UIStroke_4 = Instance.new("UIStroke")
 local TextLabel_2 = Instance.new("TextLabel")
 local TextLabel_3 = Instance.new("TextLabel")
 local TextButton = Instance.new("TextButton")
@@ -34,6 +38,8 @@ local UICorner_8 = Instance.new("UICorner")
 local UICorner_9 = Instance.new("UICorner")
 local ViewportFrame = Instance.new("ViewportFrame")
 local UICorner_10 = Instance.new("UICorner")
+local UIStroke_5 = Instance.new("UIStroke")
+local UIStroke_6 = Instance.new("UIStroke")
 local name = Instance.new("TextLabel")
 local id = Instance.new("TextLabel")
 local TextBox = Instance.new("TextBox")
@@ -41,7 +47,7 @@ local UICorner_11 = Instance.new("UICorner")
 
 --Properties:
 
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui --(game:GetService("CoreGui") or gethui())
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 HClogo.Name = "HC logo"
@@ -65,9 +71,12 @@ main.BackgroundColor3 = Color3.fromRGB(45, 45, 50)
 main.BorderColor3 = Color3.fromRGB(0, 0, 0)
 main.BorderSizePixel = 0
 main.Position = UDim2.new(0.5, 0, 0.5, 0)
-main.Size = UDim2.new(0.558510661, 0, 0.473684222, 0)
+main.Size = UDim2.new(0.358999997, 0, 0.273999989, 0)
 
 UICorner.Parent = main
+
+UIStroke.Thickness = 2.000
+UIStroke.Parent = main
 
 TextLabel.Parent = main
 TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -95,6 +104,9 @@ list.Size = UDim2.new(0.946938753, 0, 0.801587284, 0)
 
 UICorner_2.Parent = list
 
+UIStroke_2.Thickness = 2.000
+UIStroke_2.Parent = list
+
 ScrollingFrame.Parent = list
 ScrollingFrame.Active = true
 ScrollingFrame.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -108,6 +120,7 @@ ScrollingFrame.Size = UDim2.new(1, 0, 0.980000019, 0)
 ScrollingFrame.ZIndex = 2
 ScrollingFrame.ScrollBarThickness = 0
 ScrollingFrame.VerticalScrollBarInset = Enum.ScrollBarInset.ScrollBar
+ScrollingFrame.AutomaticCanvasSize = "Y"
 
 UIListLayout.Parent = ScrollingFrame
 UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -175,6 +188,9 @@ hit.ZIndex = 5
 
 UICorner_5.Parent = hit
 
+UIStroke_3.Thickness = 2.000
+UIStroke_3.Parent = hit
+
 a.Name = "a"
 a.Parent = hit
 a.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -186,6 +202,9 @@ a.Size = UDim2.new(0.899999976, 0, 0.899999976, 0)
 a.ZIndex = 5
 
 UICorner_6.Parent = a
+
+UIStroke_4.Thickness = 2.000
+UIStroke_4.Parent = a
 
 TextLabel_2.Parent = a
 TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -263,6 +282,13 @@ ViewportFrame.Visible = false
 
 UICorner_10.Parent = ViewportFrame
 
+UIStroke_5.Color = Color3.fromRGB(100, 100, 100)
+UIStroke_5.Parent = ViewportFrame
+
+UIStroke_6.Color = Color3.fromRGB(100, 100, 100)
+UIStroke_6.Thickness = 2.000
+UIStroke_6.Parent = animation
+
 name.Name = "name"
 name.Parent = animation
 name.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -315,7 +341,7 @@ UICorner_11.Parent = TextBox
 
 -- Scripts:
 
-local function IINJV_fake_script() -- ScreenGui.LocalScript 
+local function WRXWCT_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	local light = game:GetService("Lighting")
@@ -344,7 +370,7 @@ local function IINJV_fake_script() -- ScreenGui.LocalScript
 	game:GetService("TweenService"):Create(img, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {ImageTransparency = 1}):Play()
 	wait(0.5)
 	mainFrame.Visible = true
-	game:GetService("TweenService"):Create(mainFrame, TweenInfo.new(1, Enum.EasingStyle.Back, Enum.EasingDirection.Out, 0, false, 0), {Size = UDim2.new(0.559, 0,0.474, 0)}):Play()
+	game:GetService("TweenService"):Create(mainFrame, TweenInfo.new(1, Enum.EasingStyle.Back, Enum.EasingDirection.Out, 0, false, 0), {Size = UDim2.new(0.359, 0,0.274, 0) --[[UDim2.new(0.559, 0,0.474, 0)]]}):Play()
 	
 	
 	local bg = script.Parent.main.list.bg
@@ -477,4 +503,4 @@ local function IINJV_fake_script() -- ScreenGui.LocalScript
 		script:Destroy()
 	end)
 end
-coroutine.wrap(IINJV_fake_script)()
+coroutine.wrap(WRXWCT_fake_script)()
