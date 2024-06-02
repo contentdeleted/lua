@@ -430,6 +430,7 @@ local function RNLRFH_fake_script() -- ScreenGui.LocalScript
 		local clone = toClone:Clone()
 		clone.name.Text = "Name: " ..name
 		clone.TextBox.Text = "ID: " ..str
+		clone.Visible = true
 		clone.TextButton.Activated:Connect(function()
 			setclipboard(str)
 			game.StarterGui:SetCore("SendNotification", {
