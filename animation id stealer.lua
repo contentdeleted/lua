@@ -6,43 +6,43 @@
 local ScreenGui = Instance.new("ScreenGui")
 local HClogo = Instance.new("ImageLabel")
 local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
-local animation = Instance.new("Frame")
-local TextButton = Instance.new("TextButton")
-local UICorner = Instance.new("UICorner")
-local UICorner_2 = Instance.new("UICorner")
-local ViewportFrame = Instance.new("ViewportFrame")
-local UICorner_3 = Instance.new("UICorner")
-local UIStroke = Instance.new("UIStroke")
-local UIStroke_2 = Instance.new("UIStroke")
-local name = Instance.new("TextLabel")
-local id = Instance.new("TextLabel")
-local TextBox = Instance.new("TextBox")
-local UICorner_4 = Instance.new("UICorner")
 local main = Instance.new("Frame")
-local UICorner_5 = Instance.new("UICorner")
-local UIStroke_3 = Instance.new("UIStroke")
+local UICorner = Instance.new("UICorner")
+local UIStroke = Instance.new("UIStroke")
 local TextLabel = Instance.new("TextLabel")
 local list = Instance.new("Frame")
-local UICorner_6 = Instance.new("UICorner")
-local UIStroke_4 = Instance.new("UIStroke")
+local UICorner_2 = Instance.new("UICorner")
+local UIStroke_2 = Instance.new("UIStroke")
 local ScrollingFrame = Instance.new("ScrollingFrame")
 local UIListLayout = Instance.new("UIListLayout")
 local UIGradient = Instance.new("UIGradient")
 local bg = Instance.new("ImageLabel")
 local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
 local how = Instance.new("TextButton")
-local UICorner_7 = Instance.new("UICorner")
+local UICorner_3 = Instance.new("UICorner")
 local close = Instance.new("TextButton")
-local UICorner_8 = Instance.new("UICorner")
+local UICorner_4 = Instance.new("UICorner")
 local hit = Instance.new("Frame")
-local UICorner_9 = Instance.new("UICorner")
-local UIStroke_5 = Instance.new("UIStroke")
+local UICorner_5 = Instance.new("UICorner")
+local UIStroke_3 = Instance.new("UIStroke")
 local a = Instance.new("Frame")
-local UICorner_10 = Instance.new("UICorner")
-local UIStroke_6 = Instance.new("UIStroke")
+local UICorner_6 = Instance.new("UICorner")
+local UIStroke_4 = Instance.new("UIStroke")
 local TextLabel_2 = Instance.new("TextLabel")
 local TextLabel_3 = Instance.new("TextLabel")
+local TextButton = Instance.new("TextButton")
+local UICorner_7 = Instance.new("UICorner")
+local animation = Instance.new("Frame")
 local TextButton_2 = Instance.new("TextButton")
+local UICorner_8 = Instance.new("UICorner")
+local UICorner_9 = Instance.new("UICorner")
+local ViewportFrame = Instance.new("ViewportFrame")
+local UICorner_10 = Instance.new("UICorner")
+local UIStroke_5 = Instance.new("UIStroke")
+local UIStroke_6 = Instance.new("UIStroke")
+local name = Instance.new("TextLabel")
+local id = Instance.new("TextLabel")
+local TextBox = Instance.new("TextBox")
 local UICorner_11 = Instance.new("UICorner")
 
 --Properties:
@@ -64,98 +64,6 @@ HClogo.ImageTransparency = 1.000
 
 UIAspectRatioConstraint.Parent = HClogo
 
-animation.Name = "animation"
---animation.Parent = StarterGui.ScreenGui.LocalScript
-animation.AnchorPoint = Vector2.new(0.5, 0.5)
-animation.BackgroundColor3 = Color3.fromRGB(25, 25, 30)
-animation.BorderColor3 = Color3.fromRGB(0, 0, 0)
-animation.BorderSizePixel = 0
-animation.Size = UDim2.new(0.980000019, 0, 0.25, 0)
-animation.ZIndex = 3
-
-TextButton.Parent = animation
-TextButton.BackgroundColor3 = Color3.fromRGB(80, 80, 85)
-TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextButton.BorderSizePixel = 0
-TextButton.Position = UDim2.new(0, 0, 0.669312179, 0)
-TextButton.Size = UDim2.new(1, 0, 0.330033004, 0)
-TextButton.Font = Enum.Font.Arcade
-TextButton.Text = "Copy id to clipboard"
-TextButton.TextColor3 = Color3.fromRGB(0, 180, 0)
-TextButton.TextScaled = true
-TextButton.TextSize = 14.000
-TextButton.TextWrapped = true
-
-UICorner.Parent = TextButton
-
-UICorner_2.Parent = animation
-
-ViewportFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-ViewportFrame.BorderSizePixel = 0
-ViewportFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ViewportFrame.CurrentCamera = Camera
-ViewportFrame.Parent = animation
-ViewportFrame.Visible = false
-
-UICorner_3.Parent = ViewportFrame
-
-UIStroke.Color = Color3.fromRGB(100, 100, 100)
-UIStroke.Parent = ViewportFrame
-
-UIStroke_2.Color = Color3.fromRGB(100, 100, 100)
-UIStroke_2.Thickness = 2.000
-UIStroke_2.Parent = animation
-
-name.Name = "name"
-name.Parent = animation
-name.AnchorPoint = Vector2.new(0.5, 0.5)
-name.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-name.BackgroundTransparency = 1.000
-name.BorderColor3 = Color3.fromRGB(0, 0, 0)
-name.BorderSizePixel = 0
-name.Position = UDim2.new(0.50000006, 0, 0.163231522, 0)
-name.Size = UDim2.new(1, 0, 0.336768359, 0)
-name.ZIndex = 4
-name.Font = Enum.Font.Arcade
-name.TextColor3 = Color3.fromRGB(0, 180, 0)
-name.TextScaled = true
-name.TextSize = 14.000
-name.TextWrapped = true
-
-id.Name = "id"
-id.Parent = animation
-id.AnchorPoint = Vector2.new(0.5, 0.5)
-id.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-id.BackgroundTransparency = 1.000
-id.BorderColor3 = Color3.fromRGB(0, 0, 0)
-id.BorderSizePixel = 0
-id.Position = UDim2.new(0.5, 0, 0.499999911, 0)
-id.Size = UDim2.new(1, 0, 0.336768359, 0)
-id.Visible = false
-id.ZIndex = 4
-id.Font = Enum.Font.Arcade
-id.TextColor3 = Color3.fromRGB(0, 180, 0)
-id.TextScaled = true
-id.TextSize = 14.000
-id.TextWrapped = true
-
-TextBox.Parent = animation
-TextBox.AnchorPoint = Vector2.new(0.5, 0.5)
-TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextBox.BackgroundTransparency = 1.000
-TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextBox.BorderSizePixel = 0
-TextBox.Position = UDim2.new(0.5, 0, 0.5, 0)
-TextBox.Size = UDim2.new(1, 0, 0.337000012, 0)
-TextBox.ClearTextOnFocus = false
-TextBox.Font = Enum.Font.Arcade
-TextBox.TextColor3 = Color3.fromRGB(0, 180, 0)
-TextBox.TextScaled = true
-TextBox.TextSize = 14.000
-TextBox.TextWrapped = true
-
-UICorner_4.Parent = TextBox
-
 main.Name = "main"
 main.Parent = ScreenGui
 main.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -165,10 +73,10 @@ main.BorderSizePixel = 0
 main.Position = UDim2.new(0.5, 0, 0.5, 0)
 main.Size = UDim2.new(0.558510661, 0, 0.473684222, 0)
 
-UICorner_5.Parent = main
+UICorner.Parent = main
 
-UIStroke_3.Thickness = 2.000
-UIStroke_3.Parent = main
+UIStroke.Thickness = 2.000
+UIStroke.Parent = main
 
 TextLabel.Parent = main
 TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -194,10 +102,10 @@ list.ClipsDescendants = true
 list.Position = UDim2.new(0.0258503407, 0, 0.153439149, 0)
 list.Size = UDim2.new(0.946938753, 0, 0.801587284, 0)
 
-UICorner_6.Parent = list
+UICorner_2.Parent = list
 
-UIStroke_4.Thickness = 2.000
-UIStroke_4.Parent = list
+UIStroke_2.Thickness = 2.000
+UIStroke_2.Parent = list
 
 ScrollingFrame.Parent = list
 ScrollingFrame.Active = true
@@ -249,7 +157,7 @@ how.TextScaled = true
 how.TextSize = 14.000
 how.TextWrapped = true
 
-UICorner_7.Parent = how
+UICorner_3.Parent = how
 
 close.Name = "close"
 close.Parent = main
@@ -265,7 +173,7 @@ close.TextScaled = true
 close.TextSize = 14.000
 close.TextWrapped = true
 
-UICorner_8.Parent = close
+UICorner_4.Parent = close
 
 hit.Name = "hit"
 hit.Parent = ScreenGui
@@ -277,10 +185,10 @@ hit.Size = UDim2.new(0.2645064, 0, 0.85463661, 0)
 hit.Visible = false
 hit.ZIndex = 5
 
-UICorner_9.Parent = hit
+UICorner_5.Parent = hit
 
-UIStroke_5.Thickness = 2.000
-UIStroke_5.Parent = hit
+UIStroke_3.Thickness = 2.000
+UIStroke_3.Parent = hit
 
 a.Name = "a"
 a.Parent = hit
@@ -292,10 +200,10 @@ a.Position = UDim2.new(0.49999997, 0, 0.529325485, 0)
 a.Size = UDim2.new(0.899999976, 0, 0.899999976, 0)
 a.ZIndex = 5
 
-UICorner_10.Parent = a
+UICorner_6.Parent = a
 
-UIStroke_6.Thickness = 2.000
-UIStroke_6.Parent = a
+UIStroke_4.Thickness = 2.000
+UIStroke_4.Parent = a
 
 TextLabel_2.Parent = a
 TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -323,29 +231,120 @@ TextLabel_3.TextScaled = true
 TextLabel_3.TextSize = 14.000
 TextLabel_3.TextWrapped = true
 
-TextButton_2.Parent = hit
-TextButton_2.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+TextButton.Parent = hit
+TextButton.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.216524214, 0, -0.0425219946, 0)
+TextButton.Size = UDim2.new(0.569800556, 0, 0.0322580636, 0)
+TextButton.Font = Enum.Font.Arcade
+TextButton.Text = "Close"
+TextButton.TextColor3 = Color3.fromRGB(180, 0, 0)
+TextButton.TextScaled = true
+TextButton.TextSize = 14.000
+TextButton.TextWrapped = true
+
+UICorner_7.Parent = TextButton
+
+animation.Name = "animation"
+animation.Parent = ScreenGui
+animation.AnchorPoint = Vector2.new(0.5, 0.5)
+animation.BackgroundColor3 = Color3.fromRGB(25, 25, 30)
+animation.BorderColor3 = Color3.fromRGB(0, 0, 0)
+animation.BorderSizePixel = 0
+animation.Size = UDim2.new(0.980000019, 0, 0.25, 0)
+animation.Visible = false
+animation.ZIndex = 3
+
+TextButton_2.Parent = animation
+TextButton_2.BackgroundColor3 = Color3.fromRGB(80, 80, 85)
 TextButton_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_2.BorderSizePixel = 0
-TextButton_2.Position = UDim2.new(0.216524214, 0, -0.0425219946, 0)
-TextButton_2.Size = UDim2.new(0.569800556, 0, 0.0322580636, 0)
+TextButton_2.Position = UDim2.new(0, 0, 0.669312179, 0)
+TextButton_2.Size = UDim2.new(1, 0, 0.330033004, 0)
 TextButton_2.Font = Enum.Font.Arcade
-TextButton_2.Text = "Close"
-TextButton_2.TextColor3 = Color3.fromRGB(180, 0, 0)
+TextButton_2.Text = "Copy id to clipboard"
+TextButton_2.TextColor3 = Color3.fromRGB(0, 180, 0)
 TextButton_2.TextScaled = true
 TextButton_2.TextSize = 14.000
 TextButton_2.TextWrapped = true
 
-UICorner_11.Parent = TextButton_2
+UICorner_8.Parent = TextButton_2
+
+UICorner_9.Parent = animation
+
+ViewportFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ViewportFrame.BorderSizePixel = 0
+ViewportFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ViewportFrame.Parent = animation
+ViewportFrame.Visible = false
+
+UICorner_10.Parent = ViewportFrame
+
+UIStroke_5.Color = Color3.fromRGB(100, 100, 100)
+UIStroke_5.Parent = ViewportFrame
+
+UIStroke_6.Color = Color3.fromRGB(100, 100, 100)
+UIStroke_6.Thickness = 2.000
+UIStroke_6.Parent = animation
+
+name.Name = "name"
+name.Parent = animation
+name.AnchorPoint = Vector2.new(0.5, 0.5)
+name.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+name.BackgroundTransparency = 1.000
+name.BorderColor3 = Color3.fromRGB(0, 0, 0)
+name.BorderSizePixel = 0
+name.Position = UDim2.new(0.50000006, 0, 0.163231522, 0)
+name.Size = UDim2.new(1, 0, 0.336768359, 0)
+name.ZIndex = 4
+name.Font = Enum.Font.Arcade
+name.TextColor3 = Color3.fromRGB(0, 180, 0)
+name.TextScaled = true
+name.TextSize = 14.000
+name.TextWrapped = true
+
+id.Name = "id"
+id.Parent = animation
+id.AnchorPoint = Vector2.new(0.5, 0.5)
+id.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+id.BackgroundTransparency = 1.000
+id.BorderColor3 = Color3.fromRGB(0, 0, 0)
+id.BorderSizePixel = 0
+id.Position = UDim2.new(0.5, 0, 0.499999911, 0)
+id.Size = UDim2.new(1, 0, 0.336768359, 0)
+id.Visible = false
+id.ZIndex = 4
+id.Font = Enum.Font.Arcade
+id.TextColor3 = Color3.fromRGB(0, 180, 0)
+id.TextScaled = true
+id.TextSize = 14.000
+id.TextWrapped = true
+
+TextBox.Parent = animation
+TextBox.AnchorPoint = Vector2.new(0.5, 0.5)
+TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.BackgroundTransparency = 1.000
+TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderSizePixel = 0
+TextBox.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextBox.Size = UDim2.new(1, 0, 0.337000012, 0)
+TextBox.ClearTextOnFocus = false
+TextBox.Font = Enum.Font.Arcade
+TextBox.TextColor3 = Color3.fromRGB(0, 180, 0)
+TextBox.TextScaled = true
+TextBox.TextSize = 14.000
+TextBox.TextWrapped = true
+
+UICorner_11.Parent = TextBox
 
 -- Scripts:
 
-local function FDYN_fake_script() -- ScreenGui.LocalScript 
+local function RNLRFH_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
-	animation.Parent = script
 
 	local light = game:GetService("Lighting")
-	local toClone = script.animation
+	local toClone = script.Parent.animation
 	local stop = false
 	--[[local vp = script.Parent.main.list.ScrollingFrame.Frame.ViewportFrame
 	
@@ -515,4 +514,4 @@ local function FDYN_fake_script() -- ScreenGui.LocalScript
 		script:Destroy()
 	end)
 end
-coroutine.wrap(FDYN_fake_script)()
+coroutine.wrap(RNLRFH_fake_script)()
