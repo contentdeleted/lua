@@ -346,13 +346,6 @@ local function RNLRFH_fake_script() -- ScreenGui.LocalScript
 	local light = game:GetService("Lighting")
 	local toClone = script.Parent.animation
 	local stop = false
-	--[[local vp = script.Parent.main.list.ScrollingFrame.Frame.ViewportFrame
-	
-	local camera = Instance.new("Camera")
-	camera.CFrame = CFrame.new(-1.009, 0.768, -6.272) * CFrame.Angles(-10.66, -169.985, -0)
-	
-	vp.CurrentCamera = camera]]
-	
 	
 	local img = script.Parent:WaitForChild("HC logo")
 	local mainFrame = script.Parent.main
@@ -390,7 +383,7 @@ local function RNLRFH_fake_script() -- ScreenGui.LocalScript
 	
 		local lastMousePos
 		local lastGoalPos
-		local DRAG_SPEED = (8); -- // The speed of the UI darg.
+		local DRAG_SPEED = (8); 
 		function Update(dt)
 			if not (startPos) then return end;
 			if not (dragging) and (lastGoalPos) then
@@ -432,26 +425,6 @@ local function RNLRFH_fake_script() -- ScreenGui.LocalScript
 	local animationtabl = {}
 	
 	local function createbutton(id)
-		--[[local str = string.match(tostring(id) , "%d+")
-		local button = Instance.new("TextButton",scroll)
-		button.BorderSizePixel = 0
-		button.BackgroundColor3 = Color3.fromRGB(35,39,42)
-		button.Size = UDim2.new(1,0,0,50)
-		button.Text = ""
-		local name = Instance.new("TextLabel",button)
-		name.BackgroundTransparency = 1
-		name.Size = UDim2.new(1,0,0.5,0)
-		name.TextSize = 16
-		name.Font = Enum.Font.Gotham
-		name.TextColor3 = Color3.fromRGB(255,255,255)
-		name.TextXAlignment = Enum.TextXAlignment.Left
-		local id = name:Clone()
-		id.Parent = button
-		id.AnchorPoint = Vector2.new(0,1)
-		id.Position = UDim2.new(0,0,1,0)
-		id.Text = str
-		name.Text = game:GetService("MarketplaceService"):GetProductInfo(tonumber(str)).Name]]
-		
 		local str = string.match(tostring(id) , "%d+")
 		local name = game:GetService("MarketplaceService"):GetProductInfo(tonumber(str)).Name
 		local clone = toClone:Clone()
