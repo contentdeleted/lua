@@ -65,7 +65,7 @@ HClogo.ImageTransparency = 1.000
 UIAspectRatioConstraint.Parent = HClogo
 
 animation.Name = "animation"
-animation.Parent = StarterGui.ScreenGui.LocalScript
+--animation.Parent = StarterGui.ScreenGui.LocalScript
 animation.AnchorPoint = Vector2.new(0.5, 0.5)
 animation.BackgroundColor3 = Color3.fromRGB(25, 25, 30)
 animation.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -342,6 +342,7 @@ UICorner_11.Parent = TextButton_2
 
 local function FDYN_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
+	animation.Parent = script
 
 	local light = game:GetService("Lighting")
 	local toClone = script.animation
