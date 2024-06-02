@@ -47,7 +47,7 @@ local UICorner_11 = Instance.new("UICorner")
 
 --Properties:
 
-ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui --(game:GetService("CoreGui") or gethui())
+ScreenGui.Parent = (game:GetService("CoreGui") or gethui())
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 HClogo.Name = "HC logo"
@@ -71,7 +71,7 @@ main.BackgroundColor3 = Color3.fromRGB(45, 45, 50)
 main.BorderColor3 = Color3.fromRGB(0, 0, 0)
 main.BorderSizePixel = 0
 main.Position = UDim2.new(0.5, 0, 0.5, 0)
-main.Size = UDim2.new(0.358999997, 0, 0.273999989, 0)
+main.Size = UDim2.new(0.259000003, 0, 0.574000001, 0)
 
 UICorner.Parent = main
 
@@ -118,6 +118,7 @@ ScrollingFrame.ClipsDescendants = false
 ScrollingFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
 ScrollingFrame.Size = UDim2.new(1, 0, 0.980000019, 0)
 ScrollingFrame.ZIndex = 2
+ScrollingFrame.CanvasSize = UDim2.new(0, 0, 9.99999984e+17, 0)
 ScrollingFrame.ScrollBarThickness = 0
 ScrollingFrame.VerticalScrollBarInset = Enum.ScrollBarInset.ScrollBar
 ScrollingFrame.AutomaticCanvasSize = "Y"
@@ -125,7 +126,7 @@ ScrollingFrame.AutomaticCanvasSize = "Y"
 UIListLayout.Parent = ScrollingFrame
 UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout.Padding = UDim.new(0.0199999996, 0)
+UIListLayout.Padding = UDim.new(0.0500000007, 0)
 
 UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(0.10, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(0.90, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
 UIGradient.Parent = list
@@ -253,6 +254,7 @@ animation.AnchorPoint = Vector2.new(0.5, 0.5)
 animation.BackgroundColor3 = Color3.fromRGB(25, 25, 30)
 animation.BorderColor3 = Color3.fromRGB(0, 0, 0)
 animation.BorderSizePixel = 0
+animation.LayoutOrder = 1
 animation.Size = UDim2.new(0.980000019, 0, 0.25, 0)
 animation.Visible = false
 animation.ZIndex = 3
@@ -341,7 +343,7 @@ UICorner_11.Parent = TextBox
 
 -- Scripts:
 
-local function WRXWCT_fake_script() -- ScreenGui.LocalScript 
+local function FOQSH_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	local light = game:GetService("Lighting")
@@ -354,7 +356,7 @@ local function WRXWCT_fake_script() -- ScreenGui.LocalScript
 	
 	vp.CurrentCamera = camera]]
 	
-	
+	local scroll = script.Parent.main.list.ScrollingFrame
 	local img = script.Parent:WaitForChild("HC logo")
 	local mainFrame = script.Parent.main
 	mainFrame.Visible = false
@@ -370,7 +372,7 @@ local function WRXWCT_fake_script() -- ScreenGui.LocalScript
 	game:GetService("TweenService"):Create(img, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {ImageTransparency = 1}):Play()
 	wait(0.5)
 	mainFrame.Visible = true
-	game:GetService("TweenService"):Create(mainFrame, TweenInfo.new(1, Enum.EasingStyle.Back, Enum.EasingDirection.Out, 0, false, 0), {Size = UDim2.new(0.359, 0,0.274, 0) --[[UDim2.new(0.559, 0,0.474, 0)]]}):Play()
+	game:GetService("TweenService"):Create(mainFrame, TweenInfo.new(1, Enum.EasingStyle.Back, Enum.EasingDirection.Out, 0, false, 0), {Size = UDim2.new(0.259, 0,0.574, 0) --[[UDim2.new(0.559, 0,0.474, 0)]]}):Play()
 	
 	
 	local bg = script.Parent.main.list.bg
@@ -437,6 +439,7 @@ local function WRXWCT_fake_script() -- ScreenGui.LocalScript
 	local animationtabl = {}
 	
 	local function createbutton(id)
+		--fix.Parent = script
 		local str = string.match(tostring(id) , "%d+")
 		local name = game:GetService("MarketplaceService"):GetProductInfo(tonumber(str)).Name
 		local clone = toClone:Clone()
@@ -456,8 +459,9 @@ local function WRXWCT_fake_script() -- ScreenGui.LocalScript
 		end)
 		clone.Parent = script.Parent.main.list.ScrollingFrame
 		clone.Visible = true
+		--game:GetService("TweenService"):Create(scroll,TweenInfo.new(0.1),{CanvasPosition = Vector2.new(0,clone.AbsolutePosition.Y + clone.AbsoluteSize.Y)}):Play()
+		--fix.Parent = bg.Parent.ScrollingFrame
 	end
-	
 	
 	spawn(function()
 		while true do
@@ -502,5 +506,9 @@ local function WRXWCT_fake_script() -- ScreenGui.LocalScript
 		script.Parent:Destroy()
 		script:Destroy()
 	end)
+	
+	--[[scroll.ChildAdded:Connect(function(obj:Frame)
+		game:GetService("TweenService"):Create(scroll,TweenInfo.new(0.1),{CanvasPosition = Vector2.new(0,obj.Position.Y.Scale * game.Workspace.CurrentCamera.ViewportSize.Y)}):Play()
+	end)]]
 end
-coroutine.wrap(WRXWCT_fake_script)()
+coroutine.wrap(FOQSH_fake_script)()
