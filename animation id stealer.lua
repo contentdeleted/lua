@@ -1,5 +1,5 @@
--- (VOID) : Gui to Lua
--- Version: 1.4
+-- Gui to Lua
+-- Version: 3.2
 
 -- Instances:
 
@@ -8,11 +8,9 @@ local HClogo = Instance.new("ImageLabel")
 local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 local main = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
-local UIStroke = Instance.new("UIStroke")
 local TextLabel = Instance.new("TextLabel")
 local list = Instance.new("Frame")
 local UICorner_2 = Instance.new("UICorner")
-local UIStroke_2 = Instance.new("UIStroke")
 local ScrollingFrame = Instance.new("ScrollingFrame")
 local UIListLayout = Instance.new("UIListLayout")
 local UIGradient = Instance.new("UIGradient")
@@ -24,10 +22,8 @@ local close = Instance.new("TextButton")
 local UICorner_4 = Instance.new("UICorner")
 local hit = Instance.new("Frame")
 local UICorner_5 = Instance.new("UICorner")
-local UIStroke_3 = Instance.new("UIStroke")
 local a = Instance.new("Frame")
 local UICorner_6 = Instance.new("UICorner")
-local UIStroke_4 = Instance.new("UIStroke")
 local TextLabel_2 = Instance.new("TextLabel")
 local TextLabel_3 = Instance.new("TextLabel")
 local TextButton = Instance.new("TextButton")
@@ -38,8 +34,6 @@ local UICorner_8 = Instance.new("UICorner")
 local UICorner_9 = Instance.new("UICorner")
 local ViewportFrame = Instance.new("ViewportFrame")
 local UICorner_10 = Instance.new("UICorner")
-local UIStroke_5 = Instance.new("UIStroke")
-local UIStroke_6 = Instance.new("UIStroke")
 local name = Instance.new("TextLabel")
 local id = Instance.new("TextLabel")
 local TextBox = Instance.new("TextBox")
@@ -47,7 +41,7 @@ local UICorner_11 = Instance.new("UICorner")
 
 --Properties:
 
-ScreenGui.Parent = (game:GetService("CoreGui") or gethui())
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 HClogo.Name = "HC logo"
@@ -75,9 +69,6 @@ main.Size = UDim2.new(0.558510661, 0, 0.473684222, 0)
 
 UICorner.Parent = main
 
-UIStroke.Thickness = 2.000
-UIStroke.Parent = main
-
 TextLabel.Parent = main
 TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -103,9 +94,6 @@ list.Position = UDim2.new(0.0258503407, 0, 0.153439149, 0)
 list.Size = UDim2.new(0.946938753, 0, 0.801587284, 0)
 
 UICorner_2.Parent = list
-
-UIStroke_2.Thickness = 2.000
-UIStroke_2.Parent = list
 
 ScrollingFrame.Parent = list
 ScrollingFrame.Active = true
@@ -187,9 +175,6 @@ hit.ZIndex = 5
 
 UICorner_5.Parent = hit
 
-UIStroke_3.Thickness = 2.000
-UIStroke_3.Parent = hit
-
 a.Name = "a"
 a.Parent = hit
 a.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -201,9 +186,6 @@ a.Size = UDim2.new(0.899999976, 0, 0.899999976, 0)
 a.ZIndex = 5
 
 UICorner_6.Parent = a
-
-UIStroke_4.Thickness = 2.000
-UIStroke_4.Parent = a
 
 TextLabel_2.Parent = a
 TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -281,13 +263,6 @@ ViewportFrame.Visible = false
 
 UICorner_10.Parent = ViewportFrame
 
-UIStroke_5.Color = Color3.fromRGB(100, 100, 100)
-UIStroke_5.Parent = ViewportFrame
-
-UIStroke_6.Color = Color3.fromRGB(100, 100, 100)
-UIStroke_6.Thickness = 2.000
-UIStroke_6.Parent = animation
-
 name.Name = "name"
 name.Parent = animation
 name.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -340,12 +315,19 @@ UICorner_11.Parent = TextBox
 
 -- Scripts:
 
-local function RNLRFH_fake_script() -- ScreenGui.LocalScript 
+local function IINJV_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	local light = game:GetService("Lighting")
 	local toClone = script.Parent.animation
 	local stop = false
+	--[[local vp = script.Parent.main.list.ScrollingFrame.Frame.ViewportFrame
+	
+	local camera = Instance.new("Camera")
+	camera.CFrame = CFrame.new(-1.009, 0.768, -6.272) * CFrame.Angles(-10.66, -169.985, -0)
+	
+	vp.CurrentCamera = camera]]
+	
 	
 	local img = script.Parent:WaitForChild("HC logo")
 	local mainFrame = script.Parent.main
@@ -365,6 +347,10 @@ local function RNLRFH_fake_script() -- ScreenGui.LocalScript
 	game:GetService("TweenService"):Create(mainFrame, TweenInfo.new(1, Enum.EasingStyle.Back, Enum.EasingDirection.Out, 0, false, 0), {Size = UDim2.new(0.559, 0,0.474, 0)}):Play()
 	
 	
+	local bg = script.Parent.main.list.bg
+	if math.random(1,10) == 10 then
+		bg.Image = "http://www.roblox.com/asset/?id=16202110010"
+	end
 	
 	spawn(function()
 		local UserInputService = game:GetService("UserInputService")
@@ -383,7 +369,7 @@ local function RNLRFH_fake_script() -- ScreenGui.LocalScript
 	
 		local lastMousePos
 		local lastGoalPos
-		local DRAG_SPEED = (8); 
+		local DRAG_SPEED = (8); -- // The speed of the UI darg.
 		function Update(dt)
 			if not (startPos) then return end;
 			if not (dragging) and (lastGoalPos) then
@@ -430,17 +416,20 @@ local function RNLRFH_fake_script() -- ScreenGui.LocalScript
 		local clone = toClone:Clone()
 		clone.name.Text = "Name: " ..name
 		clone.TextBox.Text = "ID: " ..str
-		clone.Visible = true
 		clone.TextButton.Activated:Connect(function()
 			setclipboard(str)
-			game.StarterGui:SetCore("SendNotification", {
+			clone.TextButton.Text = "Copied!"
+			wait(1)
+			clone.TextButton.Text = "Copy id to clipboard"
+			--[[game.StarterGui:SetCore("SendNotification", {
 				Title = "Copied to clipboard";
 				Text = str;
 				Icon = "http://www.roblox.com/asset/?id=14939447488";
 				Duration = 3;
-			})
+			})]]
 		end)
 		clone.Parent = script.Parent.main.list.ScrollingFrame
+		clone.Visible = true
 	end
 	
 	
@@ -488,4 +477,4 @@ local function RNLRFH_fake_script() -- ScreenGui.LocalScript
 		script:Destroy()
 	end)
 end
-coroutine.wrap(RNLRFH_fake_script)()
+coroutine.wrap(IINJV_fake_script)()
